@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# このファイルはlllyasviel/stable-diffusion-webui-forge より引用しています。
+# ライセンスについては https://github.com/lllyasviel/stable-diffusion-webui-forge/blob/main/LICENSE.txt を参照してください。
+# コピー元がAGPLライセンスでの配布のため、このファイルだけAGPLという扱いになります。
+
 #########################################################
 # Uncomment and change the variables below to your need:#
 #########################################################
@@ -11,7 +15,9 @@ install_dir="/home/ubuntu"
 clone_dir="forge"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-export COMMANDLINE_ARGS="--server-name 0.0.0.0"
+# ! この --server-name 0.0.0.0 は削除しないでください。
+# ! 変更が必要な場合は追記してください。
+export COMMANDLINE_ARGS="--server-name 0.0.0.0 "
 
 # python3 executable
 #python_cmd="python"

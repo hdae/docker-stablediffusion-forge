@@ -1,3 +1,5 @@
+.env
+
 embeddings/
 extensions/
 models/
