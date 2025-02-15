@@ -1,5 +1,8 @@
 FROM nvidia/cuda:12.8.0-cudnn-devel-ubuntu24.04
 
+ARG PYTHON_BUILD_URL=https://github.com/astral-sh/python-build-standalone/releases/download/20250212/cpython-3.10.16+20250212-x86_64_v3-unknown-linux-gnu-pgo+lto-full.tar.zst
+ARG FORGE_COMMIT_HASH
+
 WORKDIR /
 
 RUN apt-get update && \
@@ -12,7 +15,7 @@ RUN apt-get update && \
     libglib2.0-0 \
     libgoogle-perftools-dev && \
     rm -rf /var/lib/apt/lists/* && \
-    wget -O python.tar.zst https://github.com/astral-sh/python-build-standalone/releases/download/20250212/cpython-3.10.16+20250212-x86_64_v3-unknown-linux-gnu-pgo+lto-full.tar.zst && \
+    wget -O python.tar.zst ${PYTHON_BUILD_URL} && \
     tar -xf python.tar.zst && \
     rm python.tar.zst
 
@@ -24,10 +27,9 @@ RUN chmod +x /entrypoint.sh && \
 USER ubuntu
 WORKDIR /home/ubuntu
 RUN git clone --depth=1 https://github.com/lllyasviel/stable-diffusion-webui-forge /home/ubuntu/forge && \
-    cd /home/ubuntu/forge
-    #  && \
-    # git fetch --depth 1 origin f11456e2d38d6b7f8432cd6952fb2f10fc2081b3 && \
-    # git checkout f11456e2d38d6b7f8432cd6952fb2f10fc2081b3
+    cd /home/ubuntu/forge && \
+    git fetch --depth 1 origin ${FORGE_COMMIT_HASH} && \
+    git checkout ${FORGE_COMMIT_HASH}
 
 USER root
 ENTRYPOINT [ "/entrypoint.sh" ]

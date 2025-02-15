@@ -7,6 +7,11 @@ services:
     build:
       context: ./docker
       dockerfile: Dockerfile
+      args:
+        # Using python standalone build url. (optional)
+        # - PYTHON_BUILD_URL=
+        # Using forge version.
+        - FORGE_COMMIT_HASH=a5ede13277b7b18e2f153c2135bab1180c310fc4
     volumes:
       # User directory.
       - ./embeddings:/home/ubuntu/forge/embeddings
@@ -38,6 +43,7 @@ services:
   #   environment:
   #     - TUNNEL_TOKEN=
 
+# Persistence.
 volumes:
   venv:
   repositories:
