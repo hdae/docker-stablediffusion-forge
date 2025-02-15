@@ -36,7 +36,7 @@ http://localhost:7860 にアクセス出来るようになれば起動完了。
 
 ドメインは .uk とか安いので雑に買うという手もある。
 
-### Cloudflare側の設定
+### Cloudflare側の設定 (オプション)
 
 1. [Zero Trust](https://one.dash.cloudflare.com/)に移動してアカウントを選択
 2. 左メニューから ネットワーク → トンネル を選択
