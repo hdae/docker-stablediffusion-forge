@@ -35,13 +35,38 @@ services:
             - driver: nvidia
               count: 1
               capabilities: [gpu]
+    healthcheck:
+      test: "curl http://localhost:7860/internal/ping"
+      interval: 10s
+      timeout: 10s
+      start_period: 10s
+      retries: 60
 
-  # tunnel:
-  #   restart: always
-  #   image: cloudflare/cloudflared
-  #   command: tunnel run
-  #   environment:
-  #     - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+  dynamic:
+    restart: always
+    image: cloudflare/cloudflared
+    command: tunnel --url http://forge:7860
+    networks:
+      - default
+    profiles:
+      - dynamic
+    depends_on:
+      forge:
+        condition: service_healthy
+
+  static:
+    restart: always
+    image: cloudflare/cloudflared
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
+    networks:
+      - default
+    profiles:
+      - static
+    depends_on:
+      forge:
+        condition: service_healthy
 
 # Persistence.
 volumes:
