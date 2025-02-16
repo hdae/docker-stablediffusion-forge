@@ -1,7 +1,7 @@
 @echo off
 
 cd %~dp0
-docker compose --profile static up
+start cmd /c docker compose --profile static up <nul
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (
