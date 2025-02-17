@@ -1,9 +1,13 @@
-.env
+# Secret
+/.env
 
-config.json
-ui-config.json
+# User config
+/config.json
+/ui-config.json
+/webui-user.sh
 
-embeddings/
-extensions/
-models/
-outputs/
+# User data
+/embeddings/
+/extensions/
+/models/
+/outputs/

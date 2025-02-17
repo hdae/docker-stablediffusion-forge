@@ -1,21 +1,7 @@
 @echo off
 
 cd %~dp0
-
-if not exist "config.json" (
-    copy ".config.json" "config.json"
-    echo config.json を作成しました。
-) else (
-    echo config.json は存在します。
-)
-
-if not exist "ui-config.json" (
-    copy ".ui-config.json" "ui-config.json"
-    echo ui-config.json を作成しました。
-) else (
-    echo ui-config.json は存在します。
-)
-
+call prepare.bat
 docker compose build --no-cache
 
 echo %ERRORLEVEL%

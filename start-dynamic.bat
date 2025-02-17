@@ -1,6 +1,9 @@
 @echo off
 
 cd %~dp0
+
+call prepare.bat
+
 docker compose --profile dynamic up --force-recreate
 
 echo %ERRORLEVEL%

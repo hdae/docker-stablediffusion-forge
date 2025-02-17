@@ -1,6 +1,9 @@
 @echo off
 
 cd %~dp0
+
+call prepare.bat
+
 docker compose up --force-recreate
 
 echo %ERRORLEVEL%
