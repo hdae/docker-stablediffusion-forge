@@ -40,7 +40,7 @@ services:
       interval: 10s
       timeout: 10s
       start_period: 10s
-      retries: 60
+      retries: 360
 
   dynamic:
     image: cloudflare/cloudflared
