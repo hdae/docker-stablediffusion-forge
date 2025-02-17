@@ -1,12 +1,16 @@
 @echo off
 
 cd %~dp0
+
+copy /y- .config.json config.json
+copy /y- .ui-config.json ui-config.json
+
 docker compose build --no-cache
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (
-    echo Š®—¹
+    echo ï¿½ï¿½ï¿½ï¿½
 ) else if %ERRORLEVEL%==1 (
-    echo ‹N“®Ž¸”s: Docker‚ª“®‚¢‚Ä‚¢‚é‚©Šm”F‚µ‚Ä‚­‚¾‚³‚¢
+    echo ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½s: Dockerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½mï¿½Fï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     pause
 )

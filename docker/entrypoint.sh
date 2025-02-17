@@ -1,10 +1,14 @@
 #!/bin/bash
 
-chown -R 1000:1000 /home/ubuntu/forge/embeddings
+# User config
+chown -R 1000:1000 /home/ubuntu/forge/config.json
+chown -R 1000:1000 /home/ubuntu/forge/ui-config.json
+
+# User data
 chown -R 1000:1000 /home/ubuntu/forge/extensions
-chown -R 1000:1000 /home/ubuntu/forge/models
 chown -R 1000:1000 /home/ubuntu/forge/outputs
-chown -R 1000:1000 /home/ubuntu/forge/webui-user.sh
+
+# Volumes
 chown -R 1000:1000 /home/ubuntu/forge/venv
 chown -R 1000:1000 /home/ubuntu/forge/repositories
 
