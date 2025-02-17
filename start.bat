@@ -1,7 +1,7 @@
 @echo off
 
 cd %~dp0
-start cmd /c docker compose up <nul
+docker compose up --force-recreate
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (

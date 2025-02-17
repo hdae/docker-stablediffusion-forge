@@ -1,7 +1,7 @@
 @echo off
 
 cd %~dp0
-start cmd /c docker compose down <nul
+docker compose down
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (

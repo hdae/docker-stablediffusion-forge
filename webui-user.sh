@@ -17,7 +17,7 @@ clone_dir="forge"
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
 # ! この --server-name 0.0.0.0 は削除しないでください。
 # ! 変更が必要な場合は追記してください。
-export COMMANDLINE_ARGS="--server-name 0.0.0.0 "
+export COMMANDLINE_ARGS="--server-name 0.0.0.0 --medvram --opt-split-attention "
 
 # python3 executable
 #python_cmd="python"

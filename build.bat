@@ -1,7 +1,7 @@
 @echo off
 
 cd %~dp0
-start cmd /c docker compose build --no-cache <nul
+docker compose build --no-cache
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (
