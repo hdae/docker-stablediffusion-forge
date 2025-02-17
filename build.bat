@@ -2,15 +2,26 @@
 
 cd %~dp0
 
-copy /y- .config.json config.json
-copy /y- .ui-config.json ui-config.json
+if not exist "config.json" (
+    copy ".config.json" "config.json"
+    echo config.json ‚ğì¬‚µ‚Ü‚µ‚½B
+) else (
+    echo config.json ‚Í‘¶İ‚µ‚Ü‚·B
+)
+
+if not exist "ui-config.json" (
+    copy ".ui-config.json" "ui-config.json"
+    echo ui-config.json ‚ğì¬‚µ‚Ü‚µ‚½B
+) else (
+    echo ui-config.json ‚Í‘¶İ‚µ‚Ü‚·B
+)
 
 docker compose build --no-cache
 
 echo %ERRORLEVEL%
 if %ERRORLEVEL%==0 (
-    echo ï¿½ï¿½ï¿½ï¿½
+    echo Š®—¹
 ) else if %ERRORLEVEL%==1 (
-    echo ï¿½Nï¿½ï¿½ï¿½ï¿½ï¿½s: Dockerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©ï¿½mï¿½Fï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    echo ‹N“®¸”s: Docker‚ª“®‚¢‚Ä‚¢‚é‚©Šm”F‚µ‚Ä‚­‚¾‚³‚¢
     pause
 )

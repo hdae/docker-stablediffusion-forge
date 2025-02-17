@@ -19,8 +19,8 @@ services:
       - ./outputs:/home/ubuntu/forge/outputs
       # User configs.
       - ./webui-user.sh:/home/ubuntu/forge/webui-user.sh
-      # - ./ui-config.json:/home/ubuntu/forge/ui-config.json
-      # - ./config.json:/home/ubuntu/forge/config.json
+      - ./ui-config.json:/home/ubuntu/forge/ui-config.json
+      - ./config.json:/home/ubuntu/forge/config.json
       # Volumes.
       - venv:/home/ubuntu/forge/venv
       - repositories:/home/ubuntu/forge/repositories
