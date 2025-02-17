@@ -1,5 +1,8 @@
 .env
 
+config.json
+ui-config.json
+
 embeddings/
 extensions/
 models/
