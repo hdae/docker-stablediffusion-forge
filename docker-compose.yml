@@ -18,6 +18,7 @@ services:
       - ./models:/home/ubuntu/forge/models
       - ./outputs:/home/ubuntu/forge/outputs
       - ./webui-user.sh:/home/ubuntu/forge/webui-user.sh
+      - ./ui-config.json:/home/ubuntu/forge/ui-config.json
       # Required packages.
       - venv:/home/ubuntu/forge/venv
       - repositories:/home/ubuntu/forge/repositories
