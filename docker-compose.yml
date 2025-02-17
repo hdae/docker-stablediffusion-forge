@@ -3,7 +3,6 @@ name: "docker-sd-forge"
 services:
 
   forge:
-    restart: always
     build:
       context: ./docker
       dockerfile: Dockerfile
@@ -41,7 +40,6 @@ services:
       retries: 60
 
   dynamic:
-    restart: always
     image: cloudflare/cloudflared
     command: tunnel --url http://forge:7860
     networks:
