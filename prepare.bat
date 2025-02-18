@@ -1,28 +1,28 @@
 
 if not exist ".env" (
     copy ".assets\env" ".env"
-    echo .env ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B
+    echo .env ‚ğƒRƒs[‚µ‚Ü‚µ‚½B
 ) else (
-    echo .env ï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+    echo .env ‚Í‘¶İ‚µ‚Ü‚·B
 )
 
 if not exist "config.json" (
     copy ".assets\config.json" "config.json"
-    echo config.json ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B
+    echo config.json ‚ğƒRƒs[‚µ‚Ü‚µ‚½B
 ) else (
-    echo config.json ï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+    echo config.json ‚Í‘¶İ‚µ‚Ü‚·B
 )
 
 if not exist "ui-config.json" (
     copy ".assets\ui-config.json" "ui-config.json"
-    echo ui-config.json ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B
+    echo ui-config.json ‚ğƒRƒs[‚µ‚Ü‚µ‚½B
 ) else (
-    echo ui-config.json ï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+    echo ui-config.json ‚Í‘¶İ‚µ‚Ü‚·B
 )
 
 if not exist "webui-user.sh" (
     copy ".assets\webui-user.sh" "webui-user.sh"
-    echo webui-user.sh ï¿½ï¿½ï¿½ì¬ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B
+    echo webui-user.sh ‚ğƒRƒs[‚µ‚Ü‚µ‚½B
 ) else (
-    echo webui-user.sh ï¿½Í‘ï¿½ï¿½İ‚ï¿½ï¿½Ü‚ï¿½ï¿½B
+    echo webui-user.sh ‚Í‘¶İ‚µ‚Ü‚·B
 )

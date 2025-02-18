@@ -1,7 +1,9 @@
 @echo off
 
 cd %~dp0
+
 call prepare.bat
+
 docker compose build --no-cache
 
 echo %ERRORLEVEL%
