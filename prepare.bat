@@ -1,4 +1,11 @@
 
+if not exist ".env" (
+    copy ".assets\env" ".env"
+    echo .env ���쐬���܂����B
+) else (
+    echo .env �͑��݂��܂��B
+)
+
 if not exist "config.json" (
     copy ".assets\config.json" "config.json"
     echo config.json ���쐬���܂����B
