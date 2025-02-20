@@ -1,6 +1,6 @@
-FROM nvidia/cuda:12.1.0-devel-ubuntu22.04
+FROM ubuntu:24.04
 
-ARG PYTHON_BUILD_URL=https://github.com/astral-sh/python-build-standalone/releases/download/20250115/cpython-3.9.21+20250115-x86_64_v4-unknown-linux-gnu-pgo+lto-full.tar.zst
+ARG PYTHON_BUILD_URL=https://github.com/astral-sh/python-build-standalone/releases/download/20250212/cpython-3.10.16+20250212-x86_64_v3-unknown-linux-gnu-pgo+lto-full.tar.zst
 ARG FORGE_COMMIT_HASH
 
 WORKDIR /
@@ -13,7 +13,7 @@ RUN apt-get update && \
     gosu \
     wget \
     zstd \
-    libglu1-mesa-dev \
+    libgl1 \
     libglib2.0-0 \
     libgoogle-perftools-dev && \
     rm -rf /var/lib/apt/lists/* && \

@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # User config
-chown -R 1000:1000 /home/ubuntu/forge/config.json
-chown -R 1000:1000 /home/ubuntu/forge/ui-config.json
+chown -R ubuntu:ubuntu /home/ubuntu/forge/config.json
+chown -R ubuntu:ubuntu /home/ubuntu/forge/ui-config.json
 
 # User data
-chown -R 1000:1000 /home/ubuntu/forge/extensions
-chown -R 1000:1000 /home/ubuntu/forge/outputs
+chown -R ubuntu:ubuntu /home/ubuntu/forge/extensions
+chown -R ubuntu:ubuntu /home/ubuntu/forge/outputs
 
 # Volumes
-chown -R 1000:1000 /home/ubuntu/forge/venv
-chown -R 1000:1000 /home/ubuntu/forge/repositories
+chown -R ubuntu:ubuntu /home/ubuntu/forge/venv
+chown -R ubuntu:ubuntu /home/ubuntu/forge/repositories
 
 exec gosu ubuntu "$@"

@@ -4,6 +4,7 @@ cd %~dp0
 
 call prepare.bat
 
+docker compose down
 docker compose build --no-cache
 
 echo %ERRORLEVEL%
