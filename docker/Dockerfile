@@ -3,6 +3,9 @@ FROM ubuntu:24.04
 ARG PYTHON_BUILD_URL=https://github.com/astral-sh/python-build-standalone/releases/download/20250212/cpython-3.10.16+20250212-x86_64_v3-unknown-linux-gnu-pgo+lto-full.tar.zst
 ARG FORGE_COMMIT_HASH
 
+COPY ./entrypoint.sh /
+COPY ./start.sh /
+
 WORKDIR /
 
 RUN apt-get update && \
@@ -19,11 +22,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* && \
     wget -O python.tar.zst ${PYTHON_BUILD_URL} && \
     tar -xf python.tar.zst && \
-    rm python.tar.zst
-
-COPY ./entrypoint.sh /
-COPY ./start.sh /
-RUN chmod +x /entrypoint.sh && \
+    rm python.tar.zst && \
+    chmod +x /entrypoint.sh && \
     chmod +x /start.sh
 
 USER ubuntu

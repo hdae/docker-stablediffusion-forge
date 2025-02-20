@@ -41,20 +41,23 @@ services:
       timeout: 10s
       start_period: 10s
       retries: 360
+    networks:
+      - default
 
   dynamic:
     image: cloudflare/cloudflared
     command: tunnel --url http://forge:7860
-    networks:
-      - default
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     profiles:
       - dynamic
     depends_on:
       forge:
         condition: service_healthy
+    networks:
+      - default
 
   static:
-    restart: always
     image: cloudflare/cloudflared
     command: tunnel run
     environment:
@@ -64,8 +67,14 @@ services:
     depends_on:
       forge:
         condition: service_healthy
+    networks:
+      - default
 
 # Persistence.
 volumes:
   venv:
   repositories:
+
+networks:
+  default:
+    # internal: true

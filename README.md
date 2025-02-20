@@ -1,14 +1,17 @@
 # Stable Diffusion Forge on Docker (with Cloudflare Tunnel)
 
-大きめのDockerのイメージを扱うのでディスク空き容量は50GB以上を推奨する。
+出来るだけ安全に組もうとした。
 
 ## 特徴
 
-Docker上で実行されるのでセキュリティ的に比較的安心。
+- Docker上で実行されるのでセキュリティ的に多少は安心
+- Cloudflare Tunnelを利用して固定/動的なURLで共有
+- コマンド操作は基本的に不要
 
 ## 既知の問題
 
-WSL2の仕様上、モデルのロードにちょっと時間がかかります。(illustriousなどの6.5GBモデルで4分程度?)
+WSL2の仕様上、モデルのロードにちょっと時間がかかります。  
+illustriousなどの6.5GBモデルで4分程度？
 
 ## 準備
 
@@ -33,6 +36,13 @@ http://localhost:7860 にアクセス出来るようになれば起動完了。
 
 止まらなかった場合は `stop.bat` を実行すると止まります。  
 Docker Desktop側の停止ボタンで止めることもできます。
+
+## 入れ直しとか
+
+`destroy.bat`を実行するとDockerから環境を削除します。  
+追加で`docker system prune`とかすればキャッシュとかも消えます。
+
+一度削除してから`build.bat`することでリセットできます。
 
 ## Cloudflareで外部公開する場合
 
